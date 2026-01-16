@@ -46,7 +46,7 @@ function App() {
       tags: ["React", "Vite", "API", "CSS3", "Google Cloud"],
       year: "2025",
       image: aroundus,
-      demo: "https://github.com/luuzuriaga/web_project_api_full",
+      demo: "https://around-the-us-web.vercel.app/",
       repo: "https://github.com/luuzuriaga/web_project_api_full"
     },
     {
@@ -55,8 +55,8 @@ function App() {
       tags: ["javascript", "vercel", "api"],
       year: "2023",
       image: geek,
-      demo: "https://luuzuriaga.github.io/AluraGeek/",
-      repo: "https://github.com/luuzuriaga/AluraGeek"
+      demo: "https://geek-store-web.vercel.app/",
+      repo: "https://github.com/luuzuriaga/GeekStore"
     }
   ];
 
