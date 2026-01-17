@@ -1,4 +1,4 @@
-# 🌐 Portafolio Personal - Luciana Uzuriaga
+# 🌐 Portafolio Personal - Lucero Uzuriaga
 
 Bienvenido a mi portafolio web personal. Este proyecto muestra mi trabajo como desarrolladora web, mis habilidades técnicas y los proyectos en los que he trabajado.
 
