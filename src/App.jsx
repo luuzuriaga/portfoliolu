@@ -74,10 +74,10 @@ function App() {
         </div>
       </nav>
 
+      {/* HERO SECTION */}
       <header className="hero-section">
         <div className="hero-bg-image"></div>
         <div className="hero-dark-layer"></div>
-        
         <motion.div className="container hero-container" style={{ opacity: heroOpacity }}>
           <div className="hero-grid">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="hero-text">
@@ -89,7 +89,6 @@ function App() {
                 <a href="#about" className="btn-outline">About Me</a>
               </div>
             </motion.div>
-
             <div className="terminal-container">
               <div className="window code-window">
                 <div className="window-header">
@@ -109,6 +108,7 @@ function App() {
         </motion.div>
       </header>
 
+      {/* PROJECTS SECTION */}
       <section id="projects" className="projects-section">
         <div className="container">
           <h2 className="section-title">Projects <span className="neon-text">highlight</span></h2>
@@ -128,7 +128,19 @@ function App() {
                       <h3>{project.title}</h3>
                       <div className="project-tags">
                         {project.tags.map(tag => (
-                          <span key={tag} className="tag-pill">{tag}</span>
+                          <motion.span 
+                            key={tag} 
+                            className="tag-pill"
+                            whileHover={{ 
+                              scale: 1.1, 
+                              backgroundColor: "var(--neon-green)", 
+                              color: "#150d30",
+                              borderColor: "var(--neon-green)"
+                            }}
+                            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                          >
+                            {tag}
+                          </motion.span>
                         ))}
                       </div>
                       <div className="project-actions">
@@ -143,11 +155,9 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  
                   <div className="project-image-preview">
                     <img src={project.image} alt={project.title} />
                   </div>
-
                   <div className="project-info-right">
                     <span className="project-year">{project.year}</span>
                   </div>
@@ -158,6 +168,7 @@ function App() {
         </div>
       </section>
 
+      {/* ABOUT SECTION */}
       <section id="about" className="about-section">
         <div className="container">
           <h2 className="section-title">About Me</h2>
@@ -185,7 +196,6 @@ function App() {
                     <p>I’m passionate about technology and design. I focus on creating<span className="p-yellow"> interfaces</span> that tell a story through the user experience.</p>
                   </div>
                 </motion.div>
-
                 <motion.div whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: 50 }} transition={{duration: 0.6, delay: 0.2}} className="window info-mini">
                   <div className="window-header">
                     <div className="mac-btns"><span className="dot red"></span><span className="dot yellow"></span><span className="dot green"></span></div>
@@ -199,7 +209,6 @@ function App() {
                     <p>]</p>
                   </div>
                 </motion.div>
-
                 <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }} className="about-actions">
                   <a href="./docs/Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-resume">
                     <span className="p-blue">view</span>_resume<span className="p-yellow">()</span>
@@ -211,6 +220,7 @@ function App() {
         </div>
       </section>
 
+      {/* STACK SECTION */}
       <section id="stack" className="stack-section">
         <div className="container">
           <h2 className="section-title">Tech Stack</h2>
@@ -227,18 +237,67 @@ function App() {
         </div>
       </section>
 
+      {/* NEW SECTION: WHY ME / SOLUTIONS */}
+      <section className="why-me-section">
+        <div className="container">
+          <h2 className="section-title">Why work <span className="neon-text">with me?</span></h2>
+          <div className="services-grid">
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="service-card"
+            >
+              <div className="service-icon">🚀</div>
+              <h3>Custom Development</h3>
+              <p>I develop tailored Full Stack applications, from design to functional deployment, ensuring scalability and performance."</p>
+              <ul className="service-list">
+                <li>SPA with React & Vite</li>
+                <li>RESTful APIs</li>
+                <li>E-commerce & Dashboards</li>
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="service-card highlighted"
+            >
+              <div className="service-icon">🎨</div>
+              <h3>UI/UX Focused</h3>
+              <p>I don't just write code, I design experiences. I focus on clean, intuitive interfaces with smooth animations that captivate the user.</p>
+              <ul className="service-list">
+                <li>Responsive Design</li>
+                <li>Micro-interactions</li>
+                <li>Web Accessibility</li>
+              </ul>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="service-card"
+            >
+              <div className="service-icon">🤝</div>
+              <h3>Agile & Committed</h3>
+              <p>I seek to collaborate on projects that challenge my limits. My approach is constant communication, fast learning, and delivering real value.</p>
+              <ul className="service-list">
+                <li>Clean Code</li>
+                <li>Git/GitHub Workflow</li>
+                <li>Problem Solving</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
       <footer id="contact" className="footer-connect">
         <div className="container">
           <motion.div whileInView={{ scale: 1, opacity: 1 }} initial={{ scale: 0.9, opacity: 0 }} className="connect-card">
             <h2 className="connect-title">Let's <span className="neon-text">Connect</span></h2>
             <p className="connect-subtitle">¿Tienes un proyecto en mente? Escríbeme y hagámoslo realidad.</p>
-            
             <div className="contact-button-wrapper">
               <a href="mailto:Lucero.uzuriaga2020@gmail.com" className="btn-contact-main">
                 <span>Send Email</span>
               </a>
             </div>
-            
             <div className="social-links">
                <a href="https://github.com/luuzuriaga" target="_blank" rel="noopener noreferrer" className="social-icon">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
